@@ -31,15 +31,10 @@ public class LScanner {
 
         try {
             Scanner fin = new Scanner(Paths.get(dir, "example.txt"), "UTF-8");
-            String line = fin.nextLine(); // считать строку
-            System.out.println(line);
-
-            line = fin.next(); // считать слово
-            System.out.println(line);
-
-            line = fin.next(); // считать слово
-            System.out.println(line);
-
+            while (fin.hasNext()) {
+                String word = fin.next();
+                System.out.println("Прочитано слово: " + word);
+            }
         } catch (NoSuchFileException e) {
             System.out.println("Exception 1: " + e);
         } catch (IOException e) {
